@@ -47,5 +47,6 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
-  }
+  },
+  "packageManager": "yarn@4.6.0"
 }
