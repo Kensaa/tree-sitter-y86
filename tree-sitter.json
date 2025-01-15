@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "y86",
+      "camelcase": "Y86",
+      "scope": "source.y86",
+      "file-types": [
+        ".ys"
+      ],
+      "injection-regex": "^y86$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Y86 grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Kensa",
+        "email": "kensadevs@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/kensaa/tree-sitter-y86"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
