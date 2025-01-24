@@ -15,7 +15,7 @@
     },
     "_newline": {
       "type": "PATTERN",
-      "value": "[\\n]+"
+      "value": "[\\n]"
     },
     "line": {
       "type": "SEQ",

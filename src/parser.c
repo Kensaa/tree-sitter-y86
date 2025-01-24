@@ -417,7 +417,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 19:
       ACCEPT_TOKEN(sym__newline);
-      if (lookahead == '\n') ADVANCE(19);
       END_STATE();
     case 20:
       ACCEPT_TOKEN(anon_sym_COLON);

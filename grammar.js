@@ -16,7 +16,7 @@ module.exports = grammar({
     source_file: ($) => repeat($.line),
 
     identifier: ($) => /[a-zA-Z][0-9a-zA-Z_]*/,
-    _newline: ($) => /[\n]+/,
+    _newline: ($) => /[\n]/,
     // line: ($) => seq(choice($.instruction, $.label, $.directive), $._newline),
     line: ($) =>
       seq(
