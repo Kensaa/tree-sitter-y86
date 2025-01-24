@@ -10,7 +10,7 @@
 module.exports = grammar({
   name: "y86",
 
-  extras: ($) => [/[ \t]+/, $.comment],
+  extras: ($) => [/[ \t]+/],
 
   rules: {
     source_file: ($) => repeat($.line),
@@ -22,6 +22,7 @@ module.exports = grammar({
       seq(
         optional($.label),
         optional(choice($.instruction, $.directive)),
+        optional($.comment),
         $._newline
       ),
 
