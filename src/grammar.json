@@ -252,10 +252,14 @@
           "value": "#"
         },
         {
-          "type": "PATTERN",
-          "value": ".*"
+          "type": "SYMBOL",
+          "name": "string"
         }
       ]
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": ".*"
     }
   },
   "extras": [

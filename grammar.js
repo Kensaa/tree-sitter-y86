@@ -37,6 +37,7 @@ module.exports = grammar({
       seq("%", choice("eax", "ecx", "edx", "ebx", "esi", "edi", "esp", "ebp")),
     index: ($) => seq($.number, "(", $.register, ")"),
 
-    comment: ($) => seq("#", /.*/),
+    comment: ($) => seq("#", $.string),
+    string: ($) => /.*/,
   },
 });

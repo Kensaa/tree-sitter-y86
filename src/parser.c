@@ -34,7 +34,7 @@ enum ts_symbol_identifiers {
   anon_sym_LPAREN = 16,
   anon_sym_RPAREN = 17,
   anon_sym_POUND = 18,
-  aux_sym_comment_token1 = 19,
+  sym_string = 19,
   sym_source_file = 20,
   sym_line = 21,
   sym_label = 22,
@@ -68,7 +68,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_LPAREN] = "(",
   [anon_sym_RPAREN] = ")",
   [anon_sym_POUND] = "#",
-  [aux_sym_comment_token1] = "comment_token1",
+  [sym_string] = "string",
   [sym_source_file] = "source_file",
   [sym_line] = "line",
   [sym_label] = "label",
@@ -102,7 +102,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_LPAREN] = anon_sym_LPAREN,
   [anon_sym_RPAREN] = anon_sym_RPAREN,
   [anon_sym_POUND] = anon_sym_POUND,
-  [aux_sym_comment_token1] = aux_sym_comment_token1,
+  [sym_string] = sym_string,
   [sym_source_file] = sym_source_file,
   [sym_line] = sym_line,
   [sym_label] = sym_label,
@@ -193,9 +193,9 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_comment_token1] = {
-    .visible = false,
-    .named = false,
+  [sym_string] = {
+    .visible = true,
+    .named = true,
   },
   [sym_source_file] = {
     .visible = true,
@@ -551,7 +551,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_POUND);
       END_STATE();
     case 46:
-      ACCEPT_TOKEN(aux_sym_comment_token1);
+      ACCEPT_TOKEN(sym_string);
       if (lookahead == '\t' ||
           lookahead == ' ') ADVANCE(46);
       if (lookahead != 0 &&
@@ -559,7 +559,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n') ADVANCE(47);
       END_STATE();
     case 47:
-      ACCEPT_TOKEN(aux_sym_comment_token1);
+      ACCEPT_TOKEN(sym_string);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(47);
       END_STATE();
@@ -854,7 +854,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_POUND,
   [276] = 1,
     ACTIONS(75), 1,
-      aux_sym_comment_token1,
+      sym_string,
   [280] = 1,
     ACTIONS(77), 1,
       sym_identifier,
