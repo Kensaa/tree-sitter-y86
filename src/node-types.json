@@ -42,6 +42,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "directive",
     "named": true,
     "fields": {},
@@ -162,6 +167,10 @@
     }
   },
   {
+    "type": "#",
+    "named": false
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -184,10 +193,6 @@
   {
     "type": ":",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "eax",

@@ -17,7 +17,6 @@ module.exports = grammar({
 
     identifier: ($) => /[a-zA-Z][0-9a-zA-Z_]*/,
     _newline: ($) => /[\n]/,
-    // line: ($) => seq(choice($.instruction, $.label, $.directive), $._newline),
     line: ($) =>
       seq(
         optional($.label),
@@ -38,6 +37,6 @@ module.exports = grammar({
       seq("%", choice("eax", "ecx", "edx", "ebx", "esi", "edi", "esp", "ebp")),
     index: ($) => seq($.number, "(", $.register, ")"),
 
-    comment: ($) => /#.*/,
+    comment: ($) => seq("#", /.*/),
   },
 });
