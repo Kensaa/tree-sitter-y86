@@ -35,7 +35,7 @@ module.exports = grammar({
     number: ($) => /(0x[0-9a-fA-F]+)|(-?[0-9]+)/,
     register: ($) =>
       seq("%", choice("eax", "ecx", "edx", "ebx", "esi", "edi", "esp", "ebp")),
-    index: ($) => seq($.number, "(", $.register, ")"),
+    index: ($) => seq(optional($.number), "(", $.register, ")"),
 
     comment: ($) => seq("#", $.string),
     string: ($) => /.*/,
